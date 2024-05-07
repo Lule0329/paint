@@ -20,6 +20,7 @@ namespace painttest
         Bitmap bmp;
         Graphics graphics;
         string filename = "";
+        string type = "fEllipse";
 
         public Form1()
         {
@@ -28,8 +29,25 @@ namespace painttest
 
         void draw(int x, int y)
         {
+            
+
             // Rita en ifylld ellips i bmp genom graphics (se rad 45)
-            graphics.FillEllipse(pen.Brush, x, y, size, size);
+            if (type == "fEllipse")
+            {
+                graphics.FillEllipse(pen.Brush, x, y, size, size);
+            }
+            else if (type == "ellipse")
+            {
+                graphics.DrawEllipse(pen, x, y, size, size);
+            }
+            else if (type == "fRectangle")
+            {
+                graphics.FillRectangle(pen.Brush, x, y, size, size);
+            }
+            else if (type == "rectangle")
+            {
+                graphics.DrawRectangle(pen, x, y, size, size);
+            }
 
             pictureBox1.Image = bmp;
         }
@@ -123,6 +141,51 @@ namespace painttest
         {
             graphics.Clear(pen.Color);
             this.Refresh();
+        }
+
+        private void filledEllipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            type = "fEllipse";
+        }
+
+        private void ellipseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            type = "ellipse";
+        }
+
+        private void filledRectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            type = "fRectangle";
+        }
+
+        private void rectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            type = "rectangle";
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            size = 5;
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            size = 10;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            size = 20;
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            size = 35;
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            size = 50;
         }
     }
 }
