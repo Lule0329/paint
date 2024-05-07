@@ -107,5 +107,22 @@ namespace painttest
                 bmp.Save(filename, ImageFormat.Png);
             }
         }
+
+        private void sizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2(bmp.Width, bmp.Height, this);
+            form2.ShowDialog();
+        }
+
+        public void resize(int width, int height, bool scale)
+        {
+            ClientSize = new Size(width, height);
+        }
+
+        private void fillWithBrushColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            graphics.Clear(pen.Color);
+            this.Refresh();
+        }
     }
 }

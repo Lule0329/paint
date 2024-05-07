@@ -40,6 +40,9 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fillWithBrushColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +63,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.brushToolStripMenuItem});
+            this.brushToolStripMenuItem,
+            this.imageToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
@@ -136,6 +140,29 @@
             this.saveFileDialog1.Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*";
             this.saveFileDialog1.FilterIndex = 2;
             // 
+            // imageToolStripMenuItem
+            // 
+            this.imageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sizeToolStripMenuItem,
+            this.fillWithBrushColorToolStripMenuItem});
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.imageToolStripMenuItem.Text = "Image";
+            // 
+            // sizeToolStripMenuItem
+            // 
+            this.sizeToolStripMenuItem.Name = "sizeToolStripMenuItem";
+            this.sizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sizeToolStripMenuItem.Text = "Size";
+            this.sizeToolStripMenuItem.Click += new System.EventHandler(this.sizeToolStripMenuItem_Click);
+            // 
+            // fillWithBrushColorToolStripMenuItem
+            // 
+            this.fillWithBrushColorToolStripMenuItem.Name = "fillWithBrushColorToolStripMenuItem";
+            this.fillWithBrushColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.fillWithBrushColorToolStripMenuItem.Text = "Fill with brush color";
+            this.fillWithBrushColorToolStripMenuItem.Click += new System.EventHandler(this.fillWithBrushColorToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -172,6 +199,9 @@
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sizeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fillWithBrushColorToolStripMenuItem;
     }
 }
 
