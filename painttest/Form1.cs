@@ -75,6 +75,8 @@ namespace painttest
                 Image img = Image.FromFile(filename);
                 bmp = new Bitmap(img);
 
+                graphics = Graphics.FromImage(bmp);
+
                 ClientSize = new Size(img.Width, img.Height + menuStrip1.Height);
 
                 pictureBox1.Image = bmp;
