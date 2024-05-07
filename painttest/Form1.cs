@@ -69,21 +69,15 @@ namespace painttest
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Wrap the creation of the OpenFileDialog instance in a using statement,
-            // rather than manually calling the Dispose method to ensure proper disposal
-            using (OpenFileDialog dlg = new OpenFileDialog())
+            if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
-                dlg.Title = "Open Image";
-                dlg.Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*";
+                filename = openFileDialog1.FileName;
+                Image img = Image.FromFile(filename);
+                bmp = new Bitmap(img);
 
-                if (dlg.ShowDialog() == DialogResult.OK)
-                {
-                    PictureBox PictureBox1 = new PictureBox();
+                ClientSize = new Size(img.Width, img.Height + menuStrip1.Height);
 
-                    // Create a new Bitmap object from the picture file on disk,
-                    // and assign that to the PictureBox.Image property
-                    PictureBox1.Image = new Bitmap(dlg.FileName);
-                }
+                pictureBox1.Image = bmp;
             }
         }
 
