@@ -19,6 +19,7 @@ namespace painttest
         Pen pen = new Pen(Brushes.Black);
         Bitmap bmp;
         Graphics graphics;
+        string filename = "";
 
         public Form1()
         {
@@ -88,15 +89,26 @@ namespace painttest
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Stream myStream;
-            SaveFileDialog dlg = new SaveFileDialog();
-            saveFileDialog1.Filter = "Jpeg files (*.jpeg)|*.jpeg|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
+            if (filename != "")
+            {
+                bmp.Save(filename, ImageFormat.Png);
+            }
+            else
+            {
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    filename = saveFileDialog1.FileName;
+                    bmp.Save(filename, ImageFormat.Png);
+                }
+            }
+        }
 
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                
+                filename = saveFileDialog1.FileName;
+                bmp.Save(filename, ImageFormat.Png);
             }
         }
     }
