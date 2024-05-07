@@ -74,7 +74,7 @@ namespace painttest
             using (OpenFileDialog dlg = new OpenFileDialog())
             {
                 dlg.Title = "Open Image";
-                dlg.Filter = "bmp files (*.bmp)|*.bmp";
+                dlg.Filter = "PNG files (*.png)|*.png|All files (*.*)|*.*";
 
                 if (dlg.ShowDialog() == DialogResult.OK)
                 {
