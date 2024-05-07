@@ -34,19 +34,19 @@ namespace painttest
             // Rita en ifylld ellips i bmp genom graphics (se rad 45)
             if (type == "fEllipse")
             {
-                graphics.FillEllipse(pen.Brush, x, y, size, size);
+                graphics.FillEllipse(pen.Brush, x - size / 2, y - size / 2, size, size);
             }
             else if (type == "ellipse")
             {
-                graphics.DrawEllipse(pen, x, y, size, size);
+                graphics.DrawEllipse(pen, x - size / 2, y - size / 2, size, size);
             }
             else if (type == "fRectangle")
             {
-                graphics.FillRectangle(pen.Brush, x, y, size, size);
+                graphics.FillRectangle(pen.Brush, x - size / 2, y - size / 2, size, size);
             }
             else if (type == "rectangle")
             {
-                graphics.DrawRectangle(pen, x, y, size, size);
+                graphics.DrawRectangle(pen, x - size / 2, y - size / 2, size, size);
             }
 
             pictureBox1.Image = bmp;
